@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Каталог товаров{% endblock %}
+
+{% block content %}
+<div class="catalog_details">
+
+<ul >
+    {% for i in product_sections %}
+    <li style="display: inline-block">
+        <ul>
+            <li>{{i.image}}</li>
+            <li><a href="{% url 'goods:catalog_details_instruments' i.slug %}">{{ i.all_goods }} {{ i.model_of_instrument }}</a></li>
+            <li><strong>Цена:</strong>{{ i.price }}</li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Каталог товаров{% endblock %}
+
+{% block content %}
+<div class="catalog_details_instruments">
+<ul>
+    {% for i in instrument %}
+            <li>{{i.image}}</li>
+            <li>  {{ i.all_goods }} {{ i.model_of_instrument }}</li>
+            <li><strong>Цена: </strong>{{ i.price }}</li>
+    {% endfor %}
+
+    {% for i in describtion %}
+        <li><strong>Количество каналов: </strong>{{i.number_of_channels}}</li>
+        <li><strong>Тип усилителя: </strong>{{ i.combo_amplifier_type }}</li>
+        <li><strong>Встроенные эффекты: </strong>{{ i.built_in_effects }}</li>
+        <li><strong>Петля эффектов: </strong>{{ i.effect_loop }}</li>
+        <li><strong>Выход на наушники: </strong>{{ i.headphone_output }}</li>
+        <li><strong>Количество динамиков: </strong>{{ i.number_of_speakers }}</li>
+
+
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

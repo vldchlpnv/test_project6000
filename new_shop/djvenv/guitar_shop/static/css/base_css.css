@@ -1,0 +1,93 @@
+*{margin: 0;
+padding: 0;}
+
+#header{width: 100%; height: 100px; text-align: center;
+    background: #7B7C81; line-height: 100px; margin-bottom: 40px; box-shadow: 3px 3px 5px gray;
+    float: left;}
+
+#main{width: 60%; background: #D4DBE2; margin-left: 15%; text-align: center; padding: 25px;  float: left; }
+
+#aside{width: 20%; background: #D4DBE2; float: right; margin-right: 2%}
+
+#footer{width: 100%; height: 100px; text-align: center;
+    background: #7B7C81; line-height: 100px; margin-top: 40px; box-shadow: 3px 0px 5px rgba(0, 0, 0, 10); float: left}
+
+/* css для catalog_of_good шаблона*/
+.catalog_of_goods ul {list-style: none; margin-bottom: 250px;
+}
+.catalog_of_goods li {
+    display: inline;
+    margin-right: 10px; /* отступ между элементами*/
+}
+.catalog_of_goods a {
+    text-decoration: none; /* Убирает подчёркивание ссылок */
+    color: #7B7C81; /* Устанавливает цвет текста */
+    font-family: Montserrat; transition: color 0.3s ease;
+}
+.catalog_of_goods a:hover{color: #7B586B}
+
+.about{margin-top: 150px; margin-bottom: 50px}
+
+
+/* css для catalog_drtails шаблона*/
+
+/* Сброс стандартного стиля списков */
+.catalog_details ul {
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0;
+  margin: 0;
+}
+
+/* Основной контейнер для списка */
+.catalog_details ul > li {
+  display: block; /* Делаем элементы списка inline-блоками */
+  margin: 10px; /* Расстояние между блоками */
+  vertical-align: top; /* Выравниваем элементы по верхнему краю */
+}
+
+/* Вложенные списки внутри блока */
+.catalog_details ul > li > ul {
+  border: 1px solid #ccc; /* Рамка вокруг каждого блока */
+  border-radius: 8px; /* Закругленные углы */
+  padding: 15px;
+  background-color: #f9f9f9; /* Цвет фона блока */
+  width: 200px; /* Задаем ширину блока */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+  text-align: center; /* Центрируем текст */
+}
+
+/* Эффект при наведении на блок */
+.catalog_details ul > li > ul:hover {
+  transform: scale(1.05); /* Увеличение блока при наведении */
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для элементов внутри блоков */
+.catalog_details ul > li > ul > li {
+  margin-bottom: 10px; /* Отступ между строками внутри блока */
+  font-size: 14px;
+}
+
+/* Стили для цены */
+.catalog_details ul > li > ul > li strong {
+  font-size: 16px;
+  color: #2d6a4f; /* Цвет выделения для цены */
+}
+
+/*Стили для инструментов шаблон catalog_details_instruments*/
+
+.catalog_details_instruments ul{ list-style: none
+}
+.catalog_details_instruments ul > li {text-align: left; display: block}
+
+
+#aside > ul {list-style: none}
+#aside > ul > li {display: block; text-decoration: none; }
+#aside > ul > li > form >a {color: black; text-decoration: none; padding: 10px}
+#aside > ul > li >a {color: black; text-decoration: none; padding: 10px}
+/* Стили для registration */
+
+.signup {text-align: left}
+
+.login {text-align: left}

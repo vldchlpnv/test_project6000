@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная страница{% endblock %}</title>
+    <link href="{% static 'css/base_css.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="header">header</div>
+
+
+<div id="main">
+    {% block content %}
+        {% for message in messages %}
+           {{ message.tags }} {{message}}
+        {% endfor %}
+    {% endblock %}
+</div>
+
+
+<div id="aside">
+<ul>
+   {% if request.user.is_authenticated %}
+    <li> <p>Добро пожаловать,{{request.user.username}}</p> </li>
+    <li> <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+     <a href="#" onclick="parentNode.submit();">Выход</a>
+    </form> </li>
+    {% else %}
+    <li> <a href="{% url 'login' %}">Вход</a> </li>
+    <li> <a href="{% url 'sign_up' %}">Регистрация</a> </li>
+    {% endif %}
+</ul>
+</div>
+
+
+<div id="footer">footer</div>
+
+</body>
+
+</html>

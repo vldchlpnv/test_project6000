@@ -30,12 +30,11 @@ class SignUpView(
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
-
-            username = form.cleaned_data[
-                'username']  # регистрация произведена успешно {user_name}', extra_tags='register')
+            username = form.cleaned_data['username']  # регистрация произведена успешно {user_name}', extra_tags='register')
             return redirect(to='login')
 
         return render(request, self.template_name, {'form': form})
+
 
 
 class CustomLoginView(LoginView):

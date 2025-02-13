@@ -85,6 +85,8 @@ WSGI_APPLICATION = 'guitar_shop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATABASES = {
     'default': {
@@ -93,7 +95,7 @@ DATABASES = {
     }
 }
 
-
+#D:\Python_projects\test_project6000\new_shop
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -163,6 +165,18 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 # Настраиваем сессиии время длительности
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
+# Настраиваем кеширование через Redis
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # Адрес Redis-сервера
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+SESSION_CACHE_ALIAS = 'default'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
